@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To do list</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- CSS -->
+
+        <style>
+            .selected{
+                color: green;
+            }
+
+            .done{
+                text-decoration: line-through;
+                opacity:0.5;
+            }
+
+            li{
+                font-size: 2em;
+                text-align: center;
+                display: block;
+            }
+
+            h3{
+                font-size: 2em;
+                text-align: center;
+            }
+        </style>
+    
+    </head>
+    <body>
+
+    <h3>Mouseover & Mouseout EventListeners</h3>
+        
+        <ul>
+            <li>Wash Cat</li>
+            <li>Feed Cat</li>
+            <li>Feed Cats and Dogs</li>
+        </ul>
+        
+        <!-- JS -->
+
+        <script>
+            var list = document.querySelectorAll("li");
+
+            for (var i = 0; i < list.length; i++){
+
+                list[i].addEventListener("mouseover", function(){
+                    this.classList.add("selected");
+                });
+
+                list[i].addEventListener("mouseout", function(){
+                    this.classList.remove("selected");
+                });
+
+                list[i].addEventListener("click", function(){
+                    this.classList.toggle("done");
+                });
+            };
+        </script>
+    </body>
+</html>
